@@ -2,7 +2,10 @@ from time import sleep
 
 from config import config_manager
 from measure.measures import measure
+from util import internet
 from util import time as timeutil
+
+AVAILABLE = internet.is_internet_available("google.com")
 
 
 def main():
@@ -24,6 +27,17 @@ if __name__ == '__main__':
     print()
     print('Author: Eyal Berkovich')
     print('Description: Small tool for measuring network\'s bandwidth')
+    print(f'Internet Connection: {AVAILABLE}')
+
+    if not AVAILABLE:
+        print('This tool is available only if internet is preset!')
+        print('Closing program...')
+        print()
+        print('_______________________________________')
+        print()
+        print('Thank you, bye')
+        exit()
+
     print()
     print('_______________________________________')
 
