@@ -40,9 +40,6 @@ def connect():
 def store_measure_result(measure_result: MeasureResult) -> None:
     global conn
 
-    if conn.closed():
-        connect()
-
     connection_available = 0
     if measure_result.connection_available:
         connection_available = 1
