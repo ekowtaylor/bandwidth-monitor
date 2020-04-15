@@ -47,7 +47,8 @@ def get_speedtest_result() -> MeasureResult:
         except:
             if not internet.is_internet_available("google.com"):
                 connection_available = False
-    else:
+
+    if not connection_available:
         result = MeasureResult(connection_available=connection_available, connection_type=connection_type,
                                download_rate=0, upload_rate=0, ping_rate=-1, month=month, day=day, year=year,
                                minutes=minutes, hour=hours, seconds=seconds, source=source)
