@@ -20,7 +20,7 @@ class MeasureResult:
 
         print(f'Measure results: Date: {self.date}, Time: {self.time}')
         print(
-            f'\tPing Rate: {self.ping_rate} Download Rate: {self.download_rate // 1000000}, Upload Rate: {self.upload_rate // 1000000}')
+            f'\tPing Rate: {self.ping_rate} Download Rate: {self.download_rate // 1000000} mb/s, Upload Rate: {self.upload_rate // 1000000} mb/s')
         print(f'')
 
 
