@@ -3,8 +3,10 @@ from time import gmtime, strftime
 import speedtest as speedtestnet
 
 from measure.measure_result import MeasureResult
+from storage import storage_manager
 
 
+# TODO: Implement fast.com measure result
 def get_fastcom_result() -> MeasureResult:
     source = 'fast.com'
     current_date, current_time = get_date_time()
@@ -13,8 +15,13 @@ def get_fastcom_result() -> MeasureResult:
     upload_rate = 0
     ping_rate = 0
 
-    return MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
-                         time=current_time, source=source)
+    result = MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
+                           time=current_time, source=source)
+
+    storage_manager.store_measure_result(result)
+    storage_manager.cache_last_measure_result(result)
+
+    return result
 
 
 def get_speedtest_result() -> MeasureResult:
@@ -27,8 +34,13 @@ def get_speedtest_result() -> MeasureResult:
     upload_rate = speedtest.upload()
     ping_rate = speedtest.results.ping
 
-    return MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
-                         time=current_time, source=source)
+    result = MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
+                           time=current_time, source=source)
+
+    storage_manager.store_measure_result(result)
+    storage_manager.cache_last_measure_result(result)
+
+    return result
 
 
 def get_date_time():
