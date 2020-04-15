@@ -16,8 +16,8 @@ def get_fastcom_result() -> MeasureResult:
     upload_rate = 0
     ping_rate = 0
 
-    result = MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
-                           time=current_time, source=source)
+    result = MeasureResult(download_rate=download_rate, upload_rate=upload_rate,
+                           ping_rate=ping_rate, date=current_date, time=current_time, source=source)
 
     storage_manager.store_measure_result(result)
     storage_manager.cache_last_measure_result(result)
@@ -29,7 +29,7 @@ def get_speedtest_result() -> MeasureResult:
     connection_type = "None"
     connection_available = internet.is_internet_available("google.com")
     source = 'speedtest.net'
-    current_date, current_time = get_date_time()
+    month, day, year, hours, minutes, seconds = get_date_time()
 
     result = None
     if connection_available:
@@ -42,14 +42,15 @@ def get_speedtest_result() -> MeasureResult:
             ping_rate = speedtest.results.ping
             result = MeasureResult(connection_available=connection_available, connection_type=connection_type,
                                    download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate,
-                                   date=current_date, time=current_time, source=source)
+                                   month=month, day=day, year=year, minutes=minutes, hour=hours, seconds=seconds,
+                                   source=source)
         except:
-            if not internet.is_internet_available():
+            if not internet.is_internet_available("google.com"):
                 connection_available = False
     else:
         result = MeasureResult(connection_available=connection_available, connection_type=connection_type,
-                               download_rate=0, upload_rate=0, ping_rate=-1, date=current_date, time=current_time,
-                               source=source)
+                               download_rate=0, upload_rate=0, ping_rate=-1, month=month, day=day, year=year,
+                               minutes=minutes, hour=hours, seconds=seconds, source=source)
 
     storage_manager.store_measure_result(result)
     storage_manager.cache_last_measure_result(result)
@@ -60,12 +61,25 @@ def get_speedtest_result() -> MeasureResult:
 def get_date_time():
     # Import datetime module
     from datetime import date
+
+    # Get current's date and time
     now = date.today()
-    # Format now's date to: Month-Name Day, Year
-    current_date = now.strftime("%B %d, %Y")
-    # Format time to: Hours:Minutes:Seconds
-    current_time = strftime('%H:%M:%S', gmtime())
-    return current_date, current_time
+
+    # Parse now's date to: Month Day Year
+    month = now.strftime("%B")
+    day = now.strftime("%d")
+    year = now.strftime("%Y")
+
+    # Parse time from gmtime()
+
+    # Get current time
+    time = gmtime()
+
+    hours = strftime('%H', time)
+    minutes = strftime('%M')
+    seconds = strftime('%S')
+
+    return month, day, year, hours, minutes, seconds
 
 
 def measure():

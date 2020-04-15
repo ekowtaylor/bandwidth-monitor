@@ -27,8 +27,12 @@ def connect():
                  ping_rate int,
                  download_rate int,
                  upload_rate int,
-                 bdate text,
-                 btime text);
+                 date_month char(2),
+                 date_day char(2),
+                 date_year char(4),
+                 time_hours char(2),
+                 time_minutes char(2),
+                 time_seconds char(2));
                  """)
     print('[INFO]: Connected to database: bandwidth-monitor.db')
 
@@ -39,15 +43,23 @@ def store_measure_result(measure_result: MeasureResult) -> None:
     if conn is None:
         connect()
 
+    connection_available = 0
+    if measure_result.connection_available:
+        connection_available = 1
+
     data = (
         measure_result.source,
-        measure_result.connection_available,
+        connection_available,
         measure_result.connection_type,
         measure_result.ping_rate,
         measure_result.download_rate,
         measure_result.upload_rate,
-        measure_result.date,
-        measure_result.time
+        measure_result.month,
+        measure_result.day,
+        measure_result.year,
+        measure_result.hour,
+        measure_result.minutes,
+        measure_result.seconds
     )
 
     conn.executemany("""insert into bandwidth_data (
@@ -57,16 +69,24 @@ def store_measure_result(measure_result: MeasureResult) -> None:
                      ping_rate,
                      download_rate,
                      upload_rate,
-                     bdate,
-                     btime) 
-                     VALUES(?,?,?,?,?,?,?,?);
+                     date_month,
+                     date_day,
+                     date_year,
+                     time_hours,
+                     time_minutes,
+                     time_seconds) 
+                     VALUES(?,?,?,?,?,?,?,?,?,?,?,?);
                      """,
-                     (data, )
+                     (data,)
                      )
+
+    conn.commit()
+    conn.close()
 
 
 def close_database():
     conn.close()
+
 
 def cache_last_measure_result(measure_result: MeasureResult) -> None:
     pass
