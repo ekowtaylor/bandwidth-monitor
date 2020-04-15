@@ -40,7 +40,7 @@ def connect():
 def store_measure_result(measure_result: MeasureResult) -> None:
     global conn
 
-    if conn is None:
+    if conn.closed():
         connect()
 
     connection_available = 0
@@ -81,7 +81,6 @@ def store_measure_result(measure_result: MeasureResult) -> None:
                      )
 
     conn.commit()
-    conn.close()
 
 
 def close_database():
