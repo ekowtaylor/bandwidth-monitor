@@ -15,6 +15,7 @@ class ConfigFile:
 
 
 def get_config(config_name: str) -> ConfigFile:
-    data = json.load(config_name)
+    with open(config_name, 'r') as config:
+        data = json.load(config)
 
     return ConfigFile(config_name, data)
