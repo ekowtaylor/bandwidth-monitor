@@ -12,6 +12,8 @@ class MeasureResult:
         self.ping_rate = ping_rate
         self.download_rate = download_rate
         self.upload_rate = upload_rate
+        self.date = date
+        self.time = time
 
     def print(self):
         print()
@@ -49,8 +51,12 @@ def main():
 
     print('Starting bandwidth monitor!')
     while True:
+        # Get measure results from speedtest.net
         measure_result: MeasureResult = get_speedtest_result()
+        # Print measure results
         measure_result.print()
+
+        # Pause execution for the given interval
         sleep(interval)
 
 
