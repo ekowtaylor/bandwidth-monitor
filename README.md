@@ -21,7 +21,7 @@ Stores and caches results from well-known internet speed test sources like [spee
 
 | Database Name |      Status     |
 |:-------------:|:---------------:|
-|     SQLite    | Not implemented |
+|     SQLite    | Implemented ✅ |
 |     MySQL     | Not implemented |
 |     PostgreSQL     | Not implemented |
 |     Flat File storage     | Not implemented |
