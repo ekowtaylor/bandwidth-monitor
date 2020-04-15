@@ -16,6 +16,16 @@ Here's a table of supported time interval extensions:
 ## Project Structure
 #### Bandwidth Monitor
 Stores and caches results from well-known internet speed test sources like [speedtest.net](http://speedtest.net/ "speedtest.net") and [fast.com](http://fast.com "fast.com").
+#####
+Supported databases:
+
+| Database Name |      Status     |
+|:-------------:|:---------------:|
+|     SQLite    | Not implemented |
+|     MySQL     | Not implemented |
+|     PostgreSQL     | Not implemented |
+|     Flat File storage     | Not implemented |
+
 
 ## Author
 Eyal Berkovich
