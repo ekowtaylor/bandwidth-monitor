@@ -8,7 +8,8 @@ from util import time as timeutil
 
 # Represents the measure results
 class MeasureResult:
-    def __init__(self, download_rate, upload_rate):
+    def __init__(self, ping_rate, download_rate, upload_rate):
+        self.ping_rate = ping_rate
         self.download_rate = download_rate
         self.upload_rate = upload_rate
 
@@ -23,7 +24,7 @@ class MeasureResult:
         # Format time to: Hours:Minutes:Seconds
         time = now.strftime('%H:%M:%S')
         print(f'Measure results: Date: {date}, Time: {time}')
-        print(f'\tDownload Rate:{self.download_rate}, Upload Rate: {self.upload_rate}')
+        print(f'\tPing Rate: {self.ping_rate} Download Rate:{self.download_rate}, Upload Rate: {self.upload_rate}')
         print(f'')
 
 
@@ -32,8 +33,9 @@ def get_speedtest_result() -> MeasureResult:
     speedtest.get_best_server()
     download_rate = speedtest.download()
     upload_rate = speedtest.upload()
+    ping_rate = speedtest.results.ping
 
-    return MeasureResult(download_rate=download_rate, upload_rate=upload_rate)
+    return MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate)
 
 
 def main():
