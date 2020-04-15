@@ -24,7 +24,7 @@ class MeasureResult:
         # Format time to: Hours:Minutes:Seconds
         time = now.strftime('%H:%M:%S')
         print(f'Measure results: Date: {date}, Time: {time}')
-        print(f'\tPing Rate: {self.ping_rate} Download Rate:{self.download_rate}, Upload Rate: {self.upload_rate}')
+        print(f'\tPing Rate: {self.ping_rate} Download Rate:{self.download_rate // 1000000}, Upload Rate: {self.upload_rate // 1000000}')
         print(f'')
 
 
