@@ -2,6 +2,7 @@ from time import sleep
 
 from config import config_manager
 from measure.measures import measure
+from storage import storage_manager
 from util import internet
 from util import time as timeutil
 
@@ -10,17 +11,24 @@ CONNECTION_TYPE = internet.get_connection_type()
 
 
 def main():
-    print('Reading config file: \'config.json\'')
+    print()
+    print('[INFO]: Reading config file: \'config.json\'')
     config_file: config_manager.ConfigFile = config_manager.get_config('config.json')
     interval = timeutil.parse_interval(config_file.get_value('check-interval'))
 
-    print('Starting bandwidth measure!')
-    while True:
-        # Measure
-        measure()
+    storage_manager.connect()
+    del config_file
 
-        # Pause execution for the given interval
-        sleep(interval)
+    print('[INFO]: Starting bandwidth measure!')
+    try:
+        while True:
+            # Measure
+            measure()
+
+            # Pause execution for the given interval
+            sleep(interval)
+    except KeyboardInterrupt:
+        storage_manager.close_database()
 
 
 if __name__ == '__main__':
