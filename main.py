@@ -1,47 +1,8 @@
-from time import sleep, gmtime, strftime
-
-import speedtest as speedtestnet
+from time import sleep
 
 from config import config_manager
+from monitor.measures import measure
 from util import time as timeutil
-
-
-# Represents the measure results
-class MeasureResult:
-    def __init__(self, ping_rate, download_rate, upload_rate, date, time):
-        self.ping_rate = ping_rate
-        self.download_rate = download_rate
-        self.upload_rate = upload_rate
-        self.date = date
-        self.time = time
-
-    def print(self):
-        print()
-
-        print(f'Measure results: Date: {self.date}, Time: {self.time}')
-        print(f'\tPing Rate: {self.ping_rate} '
-              f'Download Rate: {self.download_rate // 1000000} mb/s, Upload Rate: {self.upload_rate // 1000000} mb/s')
-        print()
-
-
-def get_speedtest_result() -> MeasureResult:
-    # Import datetime module
-    from datetime import date
-
-    now = date.today()
-    # Format now's date to: Month-Name Day, Year
-    current_date = now.strftime("%B %d, %Y")
-    # Format time to: Hours:Minutes:Seconds
-    current_time = strftime('%H:%M:%S', gmtime())
-
-    speedtest = speedtestnet.Speedtest()
-    speedtest.get_best_server()
-    download_rate = speedtest.download()
-    upload_rate = speedtest.upload()
-    ping_rate = speedtest.results.ping
-
-    return MeasureResult(download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate, date=current_date,
-                         time=current_time)
 
 
 def main():
@@ -51,10 +12,8 @@ def main():
 
     print('Starting bandwidth monitor!')
     while True:
-        # Get measure results from speedtest.net
-        measure_result: MeasureResult = get_speedtest_result()
-        # Print measure results
-        measure_result.print()
+        # Measure
+        measure()
 
         # Pause execution for the given interval
         sleep(interval)

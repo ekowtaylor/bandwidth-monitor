@@ -1,3 +1,16 @@
 {
-  "check-interval": "1m"
+
+  "check-interval": "1m",
+
+  "storage": {
+    "type": "sqlite",
+
+    "credentials": {
+      "port": 3306,
+      "username": "bandmon",
+      "password": "123456",
+      "database": "bandmonitor"
+    }
+  }
+
 }
