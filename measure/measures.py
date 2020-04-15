@@ -10,14 +10,17 @@ from util import internet
 # TODO: Implement fast.com measure result
 def get_fastcom_result() -> MeasureResult:
     source = 'fast.com'
-    current_date, current_time = get_date_time()
+
+    month, day, year, hours, minutes, seconds = get_date_time()
 
     download_rate = 0
     upload_rate = 0
     ping_rate = 0
 
-    result = MeasureResult(download_rate=download_rate, upload_rate=upload_rate,
-                           ping_rate=ping_rate, date=current_date, time=current_time, source=source)
+    result = MeasureResult(connection_available=False, connection_type="Not implemented yet",
+                           download_rate=download_rate, upload_rate=upload_rate, ping_rate=ping_rate,
+                           month=month, day=day, year=year, minutes=minutes, hour=hours, seconds=seconds,
+                           source=source)
 
     storage_manager.store_measure_result(result)
     storage_manager.cache_last_measure_result(result)
