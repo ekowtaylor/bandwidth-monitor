@@ -10,6 +10,7 @@ intervals = {
 def parse_interval(time: str):
     time = time.lower()
     last_char = time[len(time) - 1]
-    time = time[: -1]
+    if last_char.isnumeric():
+        time = time[: -1]
 
     return intervals.get(last_char) * int(time)
