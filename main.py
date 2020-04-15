@@ -1,7 +1,7 @@
 from time import sleep
 
 from config import config_manager
-from monitor.measures import measure
+from measure.measures import measure
 from util import time as timeutil
 
 
@@ -10,7 +10,7 @@ def main():
     config_file: config_manager.ConfigFile = config_manager.get_config('config.json')
     interval = timeutil.parse_interval(config_file.get_value('check-interval'))
 
-    print('Starting bandwidth monitor!')
+    print('Starting bandwidth measure!')
     while True:
         # Measure
         measure()

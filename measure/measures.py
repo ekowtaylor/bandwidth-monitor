@@ -2,7 +2,7 @@ from time import gmtime, strftime
 
 import speedtest as speedtestnet
 
-from monitor.measure_result import MeasureResult
+from measure.measure_result import MeasureResult
 
 
 def get_fastcom_result() -> MeasureResult:
