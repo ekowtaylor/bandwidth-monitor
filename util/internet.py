@@ -15,3 +15,7 @@ def is_internet_available(hostname: str) -> bool:
 
     return False
 
+
+# TODO: Implement get_connection_type() function
+def get_connection_type() -> str:
+    return "Not implemented yet"

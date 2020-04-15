@@ -6,6 +6,7 @@ from util import internet
 from util import time as timeutil
 
 AVAILABLE = internet.is_internet_available("google.com")
+CONNECTION_TYPE = internet.get_connection_type()
 
 
 def main():
@@ -27,17 +28,8 @@ if __name__ == '__main__':
     print()
     print('Author: Eyal Berkovich')
     print('Description: Small tool for measuring network\'s bandwidth')
-    print(f'Internet Connection: {AVAILABLE}')
-
-    if not AVAILABLE:
-        print('This tool is available only if internet is preset!')
-        print('Closing program...')
-        print()
-        print('_______________________________________')
-        print()
-        print('Thank you, bye')
-        exit()
-
+    print(f'Is Internet Connection Available?: {AVAILABLE}')
+    print(f'Internet Connection Type: {CONNECTION_TYPE}')
     print()
     print('_______________________________________')
 
