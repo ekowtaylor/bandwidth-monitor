@@ -26,6 +26,11 @@ Stores and caches results from well-known internet speed test sources like [spee
 |     PostgreSQL     | Not implemented |
 |     Flat File storage     | Not implemented |
 
+#### Supported cache systems:
+
+| Cache Name |      Status     |
+|:-------------:|:---------------:|
+|     Redis    | Not implemented |
 
 ## Author
 - Eyal Berkovich
