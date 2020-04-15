@@ -64,7 +64,7 @@ if __name__ == '__main__':
     print('_______________________________________')
     print()
     print('Author: Eyal Berkovich')
-    print('Description: Small Python script for measuring network\'s bandwidth')
+    print('Description: Small tool for measuring network\'s bandwidth')
     print()
     print('_______________________________________')
 
