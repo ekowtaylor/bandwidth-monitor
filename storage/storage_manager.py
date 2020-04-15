@@ -9,17 +9,6 @@ def connect():
     print('[INFO]: Connecting to database: bandwidth-monitor.db')
     conn = sqlite3.connect('bandwidth-monitor.db')
 
-    '''
-        self.connection_available = connection_available
-        self.connection_type = connection_type
-        self.ping_rate = ping_rate
-        self.download_rate = download_rate
-        self.upload_rate = upload_rate
-        self.date = date
-        self.time = time
-        self.source = source
-    '''
-
     conn.execute("""create table if not exists bandwidth_data (
                  data_source varchar(9) not null,
                  connection_available boolean default 0,
