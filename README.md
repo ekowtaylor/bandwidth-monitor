@@ -19,11 +19,12 @@ Stores and caches results from well-known internet speed test sources like [spee
 
 | Name | Purpose |
 |--|--|
-| config | Configuration management files. Currently only json configuration files are supported. |
-| measure | Responsible for the actual bandwidth measure. Currently only supported [speedtest.net](speedtest.net). |
-| util | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |
+| /config/ | Configuration management files. Currently only json configuration files are supported. |
+| /measure/ | Responsible for the actual bandwidth measure. Currently only supported [speedtest.net](speedtest.net). |
+| /util/ | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |
+| /storage/ | Contains storage management files. |
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |
-| storage | Contains storage management files. |
+| [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. |
 
   
 #### Supported databases:  
