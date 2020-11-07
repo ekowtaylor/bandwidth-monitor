@@ -15,12 +15,12 @@ Here's a table of supported time interval extensions:
   
 ## Project Structure  
 ### Bandwidth Monitor  
-Stores and caches results from well-known internet speed test sources like [speedtest.net](http://speedtest.net/ "speedtest.net") and [fast.com](http://fast.com "fast.com").  
+Stores and caches results from well-known internet speed test sources like [speedtest.net](https://www.speedtest.net/ "speedtest.net") and [fast.com](http://fast.com "fast.com").  
 
 | Name | Purpose |
 |--|--|
 | /config/ | Configuration management files. Currently only json configuration files are supported. |
-| /measure/ | Responsible for the actual bandwidth measure. Currently only supported [speedtest.net](speedtest.net). |
+| /measure/ | Responsible for the actual bandwidth measure. Currently only supported [speedtest.net](https://www.speedtest.net/). |
 | /util/ | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |
 | /storage/ | Contains storage management files. |
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |
@@ -31,16 +31,19 @@ Stores and caches results from well-known internet speed test sources like [spee
   
 | Database Name |      Status     |  
 |:-------------:|:---------------:|  
-|     SQLite    | Implemented ✅ |  
-|     MySQL     | Not implemented |  
-|     PostgreSQL     | Not implemented |  
-|     Flat File storage     | Not implemented |  
+|     SQLite    | Implemented 🟢 |  
+|     MySQL     | Not implemented 🔴 |  
+|     PostgreSQL     | Not implemented 🔴 |  
+|     Flat File storage     | Not implemented 🔴 |  
   
 #### Supported cache systems:  
   
 | Cache Name |      Status     |  
 |:-------------:|:---------------:|  
 |     Redis    | Not implemented |  
+  
+## TODO
+* Implement Web UI 🔴
   
 ## Author  
 - Eyal Berkovich
