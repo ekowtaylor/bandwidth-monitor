@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Bandwidth Monitor</title>
-<link href="https://code.highcharts.com/5.0.0/css/highcharts.css" rel="stylesheet" type="text/css">
+    <link href="https://code.highcharts.com/5.0.0/css/highcharts.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&Roboto:wght@300&family=Rubik:wght@500&display=swap" rel="stylesheet">
 
     <style>
+
+
+
+.data {
+
+}
 
 .highcharts-background {
   fill: #223;
@@ -110,15 +116,37 @@
 <main>
     <section id="hero">
         <h1>Bandwidth Monitor</h1>
-        <h3>browse your data here!</h3>
+        <h3>monitor your data here!</h3>
     </section>
 
     <section>
+        <div id="container" style="height: 700px;"></div>
+    </section>
 
+    <section>
+        <div>
+<!--            https://codepen.io/glasha_ch/pen/ROmobm-->
+
+
+</div>
+
+        <div>
+            <h1>Current Measures:</h1>
+            <h3 class="data">
+                Start Time: {{ start_time }}, End Time: {{ this_time }}
+            </h3>
+            <h3 class="data">
+                Amount of requests: {{ requests }}
+            </h3>
+            <h3 class="data">
+                Download Rate Average: {{ download_rate_avg }}
+            </h3>
+            <h3 class="data">
+                Upload Rate Average: {{ upload_rate_avg }}
+            </h3>
+        </div>
     </section>
 </main>
-
-  <div id="container" style="height: 700px;"></div>
 
 
 <script src="https://code.highcharts.com/highcharts.js"></script>

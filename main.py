@@ -21,7 +21,7 @@ time_started = None
 
 
 def finish() -> None:
-    data_analyzer.print_summary(time_started=time_started)
+    data_analyzer.get_summary(time_started=time_started, debug=True)
     storage_manager.close_database()
 
     print("[INFO]: Finished, Bye.")
