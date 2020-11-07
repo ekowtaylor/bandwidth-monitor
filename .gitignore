@@ -8,7 +8,7 @@ __pycache__/
 
 ./idea
 *.pyc
-*.db
+# *.db
 *.db-journal
 
 # Distribution / packaging
