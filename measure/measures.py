@@ -53,7 +53,7 @@ def get_speedtest_result() -> MeasureResult:
     if not connection_available:
         result = MeasureResult(connection_available=connection_available, connection_type=connection_type,
                                download_rate=0, upload_rate=0, ping_rate=-1, month=month, day=day, year=year,
-                               minutes=minutes, hour=hours, seconds=seconds, source=source)
+                               minutes=minutes, hour=hours, seconds=seconds, source=source, timestamp=milliseconds)
 
     storage_manager.store_measure_result(result)
     storage_manager.cache_last_measure_result(result)
