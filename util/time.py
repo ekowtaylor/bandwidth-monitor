@@ -23,7 +23,7 @@ def parse_interval(time: str):
 
 def get_date_time():
     # Import datetime module
-    from datetime import date, datetime
+    from datetime import datetime
 
     # Get current's date and time
     now = datetime.now()

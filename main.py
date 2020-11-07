@@ -27,6 +27,7 @@ def main() -> None:
     print('[INFO]: Reading config file: \'config.json\'')
     config_file: config_manager.ConfigFile = config_manager.get_config('config.json')
     interval = timeutil.parse_interval(config_file.get_value('check-interval'))
+    storage_manager.DATABASE = config_file.get_value('database-name') + '.db'
 
     storage_manager.connect()
     del config_file

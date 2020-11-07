@@ -1,6 +1,7 @@
 {
 
   "check-interval": "20s",
+  "database-name": "bandwidth-monitor",
 
   "storage": {
     "type": "sqlite",

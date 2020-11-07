@@ -2,7 +2,7 @@ import sqlite3
 
 from measure.measure_result import MeasureResult
 
-# TODO: Read value from config
+# default fallback value...
 DATABASE: str = 'bandwidth-monitor.db'
 
 

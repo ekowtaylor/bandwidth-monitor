@@ -65,7 +65,9 @@ def measure():
     # Get measure results from speedtest.net
     measure_result: MeasureResult = get_speedtest_result()
 
+    # Check whether the result is none
     if measure_result is None:
+        # If none don't step over
         return
 
     # Print measure results
