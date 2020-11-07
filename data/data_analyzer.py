@@ -7,5 +7,15 @@ def print_summary(time_started):
         "upload_rate_avg from bandwidth_data " \
         f'where connection_available = 1 and time_timestamp >= {time_started};')
 
+    if len(query) < 1:
+        print('[INFO]: No new traffic measured.')
+        return
+
     print(f'[INFO]: Summary of operation: '
           f'\n\tAmount of probes: {query[0]}, Download Rate Average: {query[1]}, Upload Rate Average: {query[2]}')
+
+
+def get_data(query: str) -> list:
+    storage_manager.close_database()
+
+    return storage_manager.query(query)

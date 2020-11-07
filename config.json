@@ -2,6 +2,7 @@
 
   "check-interval": "1m",
   "database-name": "bandwidth-monitor",
+  "web-port": 8600,
 
   "storage": {
     "type": "sqlite",

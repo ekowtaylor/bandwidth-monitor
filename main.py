@@ -1,14 +1,17 @@
 from time import sleep
 
 from config import config_manager
+from data import data_analyzer
 from measure.measures import measure
 from storage import storage_manager
 from util import internet
 from util import time as timeutil
-from data import data_analyzer
 from util.time import get_date_time
+from web import app
+import threading
 
 CONNECTION_TYPE = internet.get_connection_type()
+WEB_PORT = 9000
 
 time_started = None
 
@@ -22,6 +25,7 @@ def finish() -> None:
 
 def main() -> None:
     global time_started
+    global WEB_PORT
 
     print()
     print('[INFO]: Reading config file: \'config.json\'')
@@ -29,12 +33,24 @@ def main() -> None:
     interval = timeutil.parse_interval(config_file.get_value('check-interval'))
     storage_manager.DATABASE = config_file.get_value('database-name') + '.db'
 
-    storage_manager.connect()
-    del config_file
+    WEB_PORT = config_file.get_value('web-port')
 
     time_started = get_date_time()[6]
 
+    storage_manager.connect()
+    storage_manager.close_database()
+
+    del config_file
+
     print('[INFO]: Starting bandwidth measure!')
+    thread = threading.Thread(target=main_loop, args=(interval, ))
+    thread.start()
+
+    app.started = time_started
+    app.main()
+
+
+def main_loop(interval):
     try:
         while True:
             # Measure
@@ -44,6 +60,8 @@ def main() -> None:
             sleep(interval)
     except KeyboardInterrupt:
         pass
+    except Exception as e:
+        print(e)
     finally:
         finish()
 

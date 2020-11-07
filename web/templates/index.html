@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandwidth Monitor</title>
+<link href="https://code.highcharts.com/5.0.0/css/highcharts.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&Roboto:wght@300&family=Rubik:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+
+.highcharts-background {
+  fill: #223;
+}
+
+.highcharts-title {
+    fill: #e94560;
+}
+
+.highcharts-legend-item {
+    fill: #e94560;
+}
+
+.highcharts-container {
+  font-family: "Lato", sans-serif;
+}
+
+.highcharts-color-0 {
+  fill: #CAE7B9;
+  stroke: #CAE7B9;
+}
+
+.highcharts-color-1 {
+  fill: #F3DE8A;
+  stroke: #F3DE8A;
+}
+
+.highcharts-color-2 {
+  fill: #808A9F;
+  stroke: #808A9F;
+}
+
+.highcharts-color-3 {
+  fill: #EB9486;
+  stroke: #EB9486;
+}
+
+.highcharts-color-4 {
+  fill: #E1DEE3;
+  stroke: #E1DEE3;
+}
+
+
+        body {
+            background-color: #1a1a2e;
+        }
+
+        ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 20px;
+        }
+
+        ul li a {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            color: #e94560;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        main section h1 {
+            color: #e94560;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-size: 30px;
+            font-family: 'Rubik', sans-serif;
+        }
+
+
+        main section h3 {
+            color: #bddbff;
+            text-align: center;
+            text-transform: lowercase;
+            font-weight: 200;
+            text-size: 30px;
+            font-family: 'Lato', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li>
+                <a href="/settings">Settings</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="hero">
+        <h1>Bandwidth Monitor</h1>
+        <h3>browse your data here!</h3>
+    </section>
+
+    <section>
+
+    </section>
+</main>
+
+  <div id="container" style="height: 1000px;"></div>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/boost.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script>
+const data = {{ data }};
+const categories = [
+            {% for category in categories %}
+            "{{ category }}",
+            {% endfor %}]
+;
+
+
+console.time('line');
+Highcharts.chart('container', {
+
+  chart: {
+    zoomType: 'x'
+  },
+
+  title: {
+    text: 'Download Rate / Date'
+  },
+
+  subtitle: {
+    text: 'This shows the stored data of download rate / date'
+  },
+
+  tooltip: {
+    valueDecimals: 2
+  },
+
+  xAxis: {
+    type: 'datetime',
+    categories: categories
+  },
+
+  series: [{
+    data: data,
+    lineWidth: 0.5,
+    name: 'Download Rate'
+  }]
+
+});
+console.timeEnd('line');
+</script>
+</body>
+</html>

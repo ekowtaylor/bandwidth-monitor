@@ -21,16 +21,18 @@ def query(statement: str) -> list:
 
     fetchall = cur.fetchall()
 
+    close_database()
+
     return fetchall
 
 
 def connect():
     global conn
 
-    print(f'[INFO]: Connecting to database: {DATABASE}')
+    # print(f'[INFO]: Connecting to database: {DATABASE}')
 
     if conn is not None:
-        print(f'[INFO]: Already connected to database: {DATABASE}')
+        # print(f'[INFO]: Already connected to database: {DATABASE}')
         return
 
     conn = sqlite3.connect(DATABASE)
@@ -51,7 +53,7 @@ def connect():
                  time_timestamp integer);
                  """)
 
-    print(f'[INFO]: Connected to database: {DATABASE}')
+    # print(f'[INFO]: Connected to database: {DATABASE}')
 
 
 def store_measure_result(measure_result: MeasureResult) -> None:
@@ -103,6 +105,8 @@ def store_measure_result(measure_result: MeasureResult) -> None:
                      )
 
     conn.commit()
+
+    close_database()
 
 
 def close_database() -> None:
