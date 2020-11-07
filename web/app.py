@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request
-from data.data_analyzer import get_data
-import main
-import os
-import logging
 import datetime
+import logging
+import os
 
+from flask import Flask, render_template
+
+from data.data_analyzer import get_data
 
 template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 template_dir = os.path.join(template_dir, 'bandwidth-monitor-master')

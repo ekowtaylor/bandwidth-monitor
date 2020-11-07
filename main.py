@@ -1,3 +1,4 @@
+import threading
 from time import sleep
 
 from config import config_manager
@@ -8,7 +9,6 @@ from util import internet
 from util import time as timeutil
 from util.time import get_date_time
 from web import app
-import threading
 
 CONNECTION_TYPE = internet.get_connection_type()
 WEB_PORT = 9000

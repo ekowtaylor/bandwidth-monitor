@@ -1,5 +1,5 @@
-import socket
 import enum
+import socket
 
 
 class ConnectionType(enum.Enum):
