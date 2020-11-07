@@ -43,7 +43,7 @@ Stores and caches results from well-known internet speed test sources like [spee
 |     Redis    | Not implemented |  
   
 ## TODO
-* Implement Web UI 🔴
+* Implement Web UI - Not implemented 🔴
   
 ## Author  
 - Eyal Berkovich
