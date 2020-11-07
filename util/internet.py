@@ -1,4 +1,10 @@
 import socket
+import enum
+
+
+class ConnectionType(enum.Enum):
+    WIRED = 0
+    WIRELESS = 1
 
 
 # noinspection PyBroadException
@@ -10,7 +16,7 @@ def is_internet_available(hostname: str) -> bool:
         sock.close()
 
         return True
-    except:
+    except Exception:
         pass
 
     return False

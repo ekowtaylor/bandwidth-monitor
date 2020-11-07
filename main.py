@@ -5,12 +5,24 @@ from measure.measures import measure
 from storage import storage_manager
 from util import internet
 from util import time as timeutil
+from data import data_analyzer
+from util.time import get_date_time
 
-AVAILABLE = internet.is_internet_available("google.com")
 CONNECTION_TYPE = internet.get_connection_type()
 
+time_started = None
 
-def main():
+
+def finish() -> None:
+    data_analyzer.print_summary(time_started=time_started)
+    storage_manager.close_database()
+
+    print("[INFO]: Finished, Bye.")
+
+
+def main() -> None:
+    global time_started
+
     print()
     print('[INFO]: Reading config file: \'config.json\'')
     config_file: config_manager.ConfigFile = config_manager.get_config('config.json')
@@ -18,6 +30,8 @@ def main():
 
     storage_manager.connect()
     del config_file
+
+    time_started = get_date_time()[6]
 
     print('[INFO]: Starting bandwidth measure!')
     try:
@@ -28,17 +42,20 @@ def main():
             # Pause execution for the given interval
             sleep(interval)
     except KeyboardInterrupt:
-        storage_manager.close_database()
+        pass
+    finally:
+        finish()
 
 
 if __name__ == '__main__':
-    print('_______________________________________')
+    print('---------------------------------------')
     print()
     print('Author: Eyal Berkovich')
     print('Description: Small tool for measuring network\'s bandwidth')
-    print(f'Is Internet Connection Available?: {AVAILABLE}')
+    available = internet.is_internet_available("google.com")
+    print(f'Is Internet Connection Available?: {available}')
     print(f'Internet Connection Type: {CONNECTION_TYPE}')
     print()
-    print('_______________________________________')
+    print('---------------------------------------')
 
     main()

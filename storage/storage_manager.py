@@ -2,12 +2,38 @@ import sqlite3
 
 from measure.measure_result import MeasureResult
 
+# TODO: Read value from config
+DATABASE: str = 'bandwidth-monitor.db'
+
+
+conn: sqlite3.Connection = None
+
+
+def query(statement: str) -> list:
+    global conn
+
+    if conn is None:
+        connect()
+
+    cur = conn.cursor()
+    cur.execute(statement)
+    # cur.execute("select * from bandwidth_data")
+
+    fetchall = cur.fetchall()
+
+    return fetchall
+
 
 def connect():
     global conn
 
-    print('[INFO]: Connecting to database: bandwidth-monitor.db')
-    conn = sqlite3.connect('bandwidth-monitor.db')
+    print(f'[INFO]: Connecting to database: {DATABASE}')
+
+    if conn is not None:
+        print(f'[INFO]: Already connected to database: {DATABASE}')
+        return
+
+    conn = sqlite3.connect(DATABASE)
 
     conn.execute("""create table if not exists bandwidth_data (
                  data_source varchar(9) not null,
@@ -21,13 +47,21 @@ def connect():
                  date_year char(4),
                  time_hours char(2),
                  time_minutes char(2),
-                 time_seconds char(2));
+                 time_seconds char(2),
+                 time_timestamp integer);
                  """)
-    print('[INFO]: Connected to database: bandwidth-monitor.db')
+
+    print(f'[INFO]: Connected to database: {DATABASE}')
 
 
 def store_measure_result(measure_result: MeasureResult) -> None:
     global conn
+
+    if measure_result is None:
+        return
+
+    if conn is None:
+        connect()
 
     connection_available = 0
     if measure_result.connection_available:
@@ -45,7 +79,8 @@ def store_measure_result(measure_result: MeasureResult) -> None:
         measure_result.year,
         measure_result.hour,
         measure_result.minutes,
-        measure_result.seconds
+        measure_result.seconds,
+        measure_result.timestamp
     )
 
     conn.executemany("""insert into bandwidth_data (
@@ -60,8 +95,9 @@ def store_measure_result(measure_result: MeasureResult) -> None:
                      date_year,
                      time_hours,
                      time_minutes,
-                     time_seconds) 
-                     VALUES(?,?,?,?,?,?,?,?,?,?,?,?);
+                     time_seconds,
+                     time_timestamp) 
+                     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);
                      """,
                      (data,)
                      )
@@ -69,8 +105,12 @@ def store_measure_result(measure_result: MeasureResult) -> None:
     conn.commit()
 
 
-def close_database():
-    conn.close()
+def close_database() -> None:
+    global conn
+
+    if conn is not None:
+        conn.close()
+        conn = None
 
 
 def cache_last_measure_result(measure_result: MeasureResult) -> None:

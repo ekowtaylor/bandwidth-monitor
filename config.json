@@ -1,6 +1,6 @@
 {
 
-  "check-interval": "1m",
+  "check-interval": "20s",
 
   "storage": {
     "type": "sqlite",

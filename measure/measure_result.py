@@ -1,7 +1,7 @@
 # Represents the measure results
 class MeasureResult:
     def __init__(self, connection_available: bool, connection_type: str, ping_rate, download_rate,
-                 upload_rate, month, day, year, hour, minutes, seconds, source: str):
+                 upload_rate, month, day, year, hour, minutes, seconds, timestamp, source: str):
         self.connection_available = connection_available
         self.connection_type = connection_type
         self.ping_rate = ping_rate
@@ -13,6 +13,7 @@ class MeasureResult:
         self.hour = hour
         self.minutes = minutes
         self.seconds = seconds
+        self.timestamp = timestamp
         self.source = source
 
         self.parse_rates()
@@ -25,16 +26,20 @@ class MeasureResult:
             self.download_rate = self.download_rate
             self.upload_rate = self.upload_rate
 
+    def get_date(self):
+        return f'{self.hour}:{self.minutes}:{self.seconds}'
+
+    def get_time(self) -> str:
+        return f'{self.hour}:{self.minutes}:{self.seconds}'
+
     def print(self):
         print()
 
-        date = f'{self.day}/{self.month}/{self.year}'
-        time = f'{self.hour}:{self.minutes}:{self.seconds}'
+        date = self.get_date()
+        time = self.get_time()
 
-        print(f'Measure results: Source: {self.source}, Date: {date}, Time: {time}')
+        print(f'[Measure Result]: Source: {self.source}, Date: {date}, Time: {time}, Timestamp: {self.timestamp}')
 
         print(f'\tConnection Available: {self.connection_available}, Connection Type: {self.connection_type}, '
-              f'Ping Rate: {self.ping_rate} Download Rate: {self.download_rate} mb/s, '
+              f'Ping Rate: {self.ping_rate}, Download Rate: {self.download_rate} mb/s, '
               f'Upload Rate: {self.upload_rate} mb/s')
-
-        print()
