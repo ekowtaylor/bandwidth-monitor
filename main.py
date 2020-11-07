@@ -1,5 +1,9 @@
+import os
+import signal
 import threading
 from time import sleep
+
+import psutil
 
 from config import config_manager
 from data import data_analyzer
@@ -23,6 +27,15 @@ def finish() -> None:
     print("[INFO]: Finished, Bye.")
 
 
+def my_signal_handler(sig, frame):
+    finish()
+
+    current_system_pid = os.getpid()
+
+    process = psutil.Process(current_system_pid)
+    process.terminate()
+
+
 def main() -> None:
     global time_started
     global WEB_PORT
@@ -43,14 +56,17 @@ def main() -> None:
     del config_file
 
     print('[INFO]: Starting bandwidth measure!')
-    thread = threading.Thread(target=main_loop, args=(interval, ))
+
+    thread = threading.Thread(target=main_loop, args=(interval,))
     thread.start()
+
+    signal.signal(signal.SIGINT, my_signal_handler)
 
     app.started = time_started
     app.main()
 
 
-def main_loop(interval):
+def main_loop(interval) -> None:
     try:
         while True:
             # Measure
@@ -58,10 +74,6 @@ def main_loop(interval):
 
             # Pause execution for the given interval
             sleep(interval)
-    except KeyboardInterrupt:
-        pass
-    except Exception as e:
-        print(e)
     finally:
         finish()
 
