@@ -10,7 +10,7 @@ from data import data_analyzer
 from measure.measures import measure
 from storage import storage_manager
 from util import internet
-from util import time as timeutil
+from util import time as time_util
 from util.time import get_date_time
 from web import app
 
@@ -43,7 +43,7 @@ def main() -> None:
     print()
     print('[INFO]: Reading config file: \'config.json\'')
     config_file: config_manager.ConfigFile = config_manager.get_config('config.json')
-    interval = timeutil.parse_interval(config_file.get_value('check-interval'))
+    interval = time_util.parse_interval(config_file.get_value('check-interval'))
     storage_manager.DATABASE = config_file.get_value('database-name') + '.db'
 
     WEB_PORT = config_file.get_value('web-port')
@@ -67,15 +67,12 @@ def main() -> None:
 
 
 def main_loop(interval) -> None:
-    try:
-        while True:
-            # Measure
-            measure()
+    while True:
+        # Measure
+        measure()
 
-            # Pause execution for the given interval
-            sleep(interval)
-    finally:
-        finish()
+        # Pause execution for the given interval
+        sleep(interval)
 
 
 if __name__ == '__main__':

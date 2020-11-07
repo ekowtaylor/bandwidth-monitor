@@ -49,6 +49,7 @@ def main():
     print('[INFO]: Starting web server...')
 
     log = logging.getLogger('werkzeug')
-    log.setLevel(logging.ERROR)
+    log.setLevel(logging.CRITICAL)
 
+    app.env = 'production'
     app.run(debug=False, port=8600)
