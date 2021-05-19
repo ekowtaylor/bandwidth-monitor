@@ -24,7 +24,7 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 | Name | Purpose |  
 |--|--|  
 | /config/ | Configuration management files. Currently only json configuration files are supported. |  
-| /measure/ | Responsible for the actual bandwidth measure. Currently only supported [speedtest.net](https://www.speedtest.net/). |  
+| /measure/ | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
 | /util/ | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
 | /storage/ | Contains storage management files. |  
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |  
