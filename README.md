@@ -17,6 +17,9 @@ Here's a table of supported time interval extensions:
 Firstly, please run `pip3 install -r requirements.txt` to make sure you have all the required modules installed.
 After that, you can run `python3 main.py` to run the entry point in the main file.
 
+Because the web panel is running on your machine, it means it runs on a local web server, on your machine. So, to access the web panel, you can go to you web browser and type `localhost:<YOUR_SET_WEB_PORT>`.
+If you haven't modified the config file, the default web port is 8600, so the address is: `localhost:8600`.
+
  ## Project Structure 
  ### 
  Bandwidth Monitor stores and caches results from well-known internet speed test sources like [speedtest.net](https://www.speedtest.net/ "speedtest.net") and [fast.com](http://fast.com "fast.com") automatically, and also offers a slick UI to manage and monitor your collected data.    
@@ -34,7 +37,7 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 |Feature | Description  |
 |:--|:--|
 | Collect Bandwidth Data | Collect internet bandwidth results from well known services, like [fast.com](https://fast.com/) and [speedtest.net](https://speedtest.net/). |
-| Web UI | You can view your collected data using a nice Web UI, that runs on a local server on your computer. The port can be set [in the web-port field](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json). |
+| Web Panel | You can view your collected data using a nice Web UI, that runs on a local server on your computer. The port can be set [in the web-port field](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json). |
 | CLI | This tool prints your collected information in your terminal |
 
 
