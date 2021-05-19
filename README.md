@@ -23,20 +23,20 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 
 | Name | Purpose |  
 |--|--|  
-| /config/ | Configuration management files. Currently only json configuration files are supported. |  
-| /measure/ | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
-| /util/ | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
-| /storage/ | Contains storage management files. |  
+| [/config/](https://github.com/codekrnl/bandwidth-monitor/tree/master/config) | Configuration management files. Currently only json configuration files are supported. |  
+| [/measure/](https://github.com/codekrnl/bandwidth-monitor/tree/master/measure) | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
+| [/util/](https://github.com/codekrnl/bandwidth-monitor/tree/master/util) | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
+| [/storage/](https://github.com/codekrnl/bandwidth-monitor/tree/master/storage) | Contains storage management files. |  
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |  
 | [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. | 
  
 #### Supported databases:    
  | Database Name |      Status     | 
  |:-------------:|:---------------:| 
- |     SQLite    | Implemented 🟢 | 
- |     MySQL     | Not Implemented 🔴 | 
- |     PostgreSQL     | Not Implemented 🔴 | 
- |     Flat File storage     | Not Implemented 🔴 |    
+ |SQLite    | Implemented 🟢 | 
+ |MySQL     | Not Implemented 🔴 | 
+ |PostgreSQL     | Not Implemented 🔴 | 
+ |Flat File storage     | Not Implemented 🔴 |    
  
  #### Supported cache systems:    
  | Cache Name |      Status     |
