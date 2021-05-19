@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Bandwidth Monitor</title>
+    
+    <meta charset="UTF-8" />
+
     <link href="https://code.highcharts.com/5.0.0/css/highcharts.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&Roboto:wght@300&family=Rubik:wght@500&display=swap" rel="stylesheet">
@@ -89,7 +91,6 @@
         main section h3 {
             color: #bddbff;
             text-align: center;
-            text-transform: lowercase;
             font-weight: 200;
             text-size: 30px;
             font-family: 'Lato', sans-serif;
@@ -99,7 +100,7 @@
 </head>
 <body>
 
-<header>
+  <header>
     <nav>
         <ul>
             <li>
@@ -116,7 +117,7 @@
 <main>
     <section id="hero">
         <h1>Bandwidth Monitor</h1>
-        <h3>monitor your data here!</h3>
+        <h3>Use this web panel to browse your collected data and view statistics.</h3>
     </section>
 
     <section>
@@ -136,7 +137,7 @@
                 Start Time: {{ start_time }}, End Time: {{ this_time }}
             </h3>
             <h3 class="data">
-                Amount of requests: {{ requests }}
+                Request Count: {{ requests }}
             </h3>
             <h3 class="data">
                 Download Rate Average: {{ download_rate_avg }}
@@ -158,8 +159,8 @@ const data = {{ data }};
 const categories = [
             {% for category in categories %}
             "{{ category }}",
-            {% endfor %}]
-;
+            {% endfor %}
+];
 
 
 console.time('line');

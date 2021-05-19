@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Settings | Bandwidth Monitor</title>
+
+        <meta charset="UTF-8" />
+
+        <style>
+
+        body {
+            background-color: #1a1a2e;
+        }
+
+        ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 20px;
+        }
+
+        ul li a {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            color: #e94560;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1 {
+            color: #e94560;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-size: 30px;
+            font-family: 'Rubik', sans-serif;
+        }
+
+
+        label {
+            color: #bddbff;
+            text-align: center;
+            font-weight: 200;
+            text-size: 30px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .form-line {
+            
+        }
+        </style>        
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+        
+                    <li>
+                        <a href="/settings">Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Settings</h1>
+
+        <form method="POST" style="text-align: center;">
+            <label for="web_panel_port">Web Panel Port: </label> <input type="number" name="web_panel_port" value="{{ web_port }}" />
+            <br />
+ 
+            <label for="database_name">Database Name: </label> <input type="text" name="database_name" value="{{ database_name }}" />
+            <br />
+
+            <label for="time_interval">Time Interval: </label> <input type="text" name="time_interval" value="{{ time_interval }}" />
+            <br />
+
+            <div class="form-line">
+                <input type="submit" class="submit-button" />
+                <input type="reset" />
+            </div>
+
+        </form>
+    </body>
+</html>
