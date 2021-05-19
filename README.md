@@ -34,9 +34,9 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
  | Database Name |      Status     | 
  |:-------------:|:---------------:| 
  |     SQLite    | Implemented 🟢 | 
- |     MySQL     | Not implemented 🔴 | 
- |     PostgreSQL     | Not implemented 🔴 | 
- |     Flat File storage     | Not implemented 🔴 |    
+ |     MySQL     | Not Implemented 🔴 | 
+ |     PostgreSQL     | Not Implemented 🔴 | 
+ |     Flat File storage     | Not Implemented 🔴 |    
  
  #### Supported cache systems:    
  | Cache Name |      Status     |
@@ -44,8 +44,9 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
  |     Redis    | Not implemented |    
 
  ## TODO  
-* Implement Web UI - Implemented on November 7, 2020 🟢  
-* Auto Refresh 🔴
+* Implement web UI - Implemented on November 7, 2020 🟢  
+* Implement running process list information 🔴
+* Implement auto web UI refresh 🔴
 
 ## Screenshots    
 ### CLI Tool: 
