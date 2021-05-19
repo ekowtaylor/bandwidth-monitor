@@ -7,7 +7,7 @@ My internet connection always seems unstable, dropping here and there. To monito
 Firstly, please run `pip3 install -r requirements.txt` to install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt), to make sure you have all the required modules installed.
 After that, you can run `python3 main.py` to run the entry point in the main file.
 
-Because the web panel is running on your machine, it means it runs on a local web server, on your machine. So, to access the web panel, you can go to you web browser and type `localhost:[<YOUR_SET_WEB_PORT>](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json "config file")`.
+Because the web panel is running on your machine, it means it runs on a local web server, on your machine. So, to access the web panel, you can go to you web browser and type `localhost:<YOUR_SET_WEB_PORT>`.
 > The default web port set in config is 8600, so the web address is: `localhost:8600`.
 
 <details>
