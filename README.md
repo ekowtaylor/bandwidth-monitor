@@ -12,7 +12,7 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 
 <details>
 
-<summary> Required Modules </summary>
+<summary>Required Modules</summary>
 
 - speedtest-cli
 - redis
