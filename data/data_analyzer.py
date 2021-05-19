@@ -18,7 +18,7 @@ def get_summary(time_started, debug=False):
     requests = query[0][0]
     if debug:
         print(
-            f'[INFO]: Summary of operation: \n\tAmount of requests: {requests}, '
+            f'[INFO]: Summary of operation: \n\tRequest Count: {requests}, '
             f'Download Rate Average: {download_rate_avg}, Upload Rate Average: {upload_rate_avg}'
         )
     return requests, download_rate_avg, upload_rate_avg
