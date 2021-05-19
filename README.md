@@ -8,7 +8,7 @@ Firstly, please run `pip3 install -r requirements.txt` to install all required m
 After that, you can run `python3 main.py` to run the entry point in the main file.
 
 Because the web panel is running on your machine, it means it runs on a local web server, on your machine. So, to access the web panel, you can go to you web browser and type `localhost:<YOUR_SET_WEB_PORT>`.
-If you haven't modified the config file, the default web port is 8600, so the address is: `localhost:8600`.
+> The default web port set in config is 8600, so the web address is: `localhost:8600`.
 
 <details>
 
@@ -25,7 +25,7 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 
 <details>
 
-<summary>Show commands</summary>
+<summary>Show Commands</summary>
 
 - `pip3 install -r requirements.txt` — To install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt).
 
