@@ -3,14 +3,13 @@ import speedtest as speedtestnet
 from measure.measure_result import MeasureResult
 from storage import storage_manager
 from util import internet
-from util.time import get_date_time
-
+from util import time
 
 # TODO: Implement fast.com measure result
 def get_fastcom_result() -> MeasureResult:
     source = 'fast.com'
 
-    month, day, year, hours, minutes, seconds, milliseconds = get_date_time()
+    month, day, year, hours, minutes, seconds, milliseconds = time.get_date_time()
 
     download_rate = 0
     upload_rate = 0
@@ -21,9 +20,6 @@ def get_fastcom_result() -> MeasureResult:
                            month=month, day=day, year=year, minutes=minutes, hour=hours, seconds=seconds,
                            timestamp=milliseconds, source=source)
 
-    storage_manager.store_measure_result(result)
-    storage_manager.cache_last_measure_result(result)
-
     return result
 
 
@@ -31,9 +27,9 @@ def get_speedtest_result() -> MeasureResult:
     connection_type = "None"
     connection_available = internet.is_internet_available("google.com")
     source = 'speedtest.net'
-    month, day, year, hours, minutes, seconds, milliseconds = get_date_time()
-
+    month, day, year, hours, minutes, seconds, milliseconds = time.get_date_time()
     result = None
+
     if connection_available:
         try:
             connection_type = internet.get_connection_type()
@@ -55,20 +51,18 @@ def get_speedtest_result() -> MeasureResult:
                                download_rate=0, upload_rate=0, ping_rate=-1, month=month, day=day, year=year,
                                minutes=minutes, hour=hours, seconds=seconds, source=source, timestamp=milliseconds)
 
-    storage_manager.store_measure_result(result)
-    storage_manager.cache_last_measure_result(result)
-
     return result
 
 
 def measure():
     # Get measure results from speedtest.net
-    measure_result: MeasureResult = get_speedtest_result()
+    speedtest_measure_result: MeasureResult = get_speedtest_result()
+    fastcom_measure_result: MeasureResult = get_fastcom_result()
 
-    # Check whether the result is none
-    if measure_result is None:
-        # If none don't step over
-        return
+    # Store measure results
+    storage_manager.store_measure_result(speedtest_measure_result)
+    storage_manager.store_measure_result(fastcom_measure_result)
 
     # Print measure results
-    measure_result.print()
+    fastcom_measure_result.print()
+    speedtest_measure_result.print()
