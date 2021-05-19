@@ -27,11 +27,11 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 | Name | Purpose |  
 |--|--|  
 | [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. | 
+| [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |  
 | [/config/](https://github.com/codekrnl/bandwidth-monitor/tree/master/config) | Configuration management files. Currently only json configuration files are supported. |  
 | [/measure/](https://github.com/codekrnl/bandwidth-monitor/tree/master/measure) | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
 | [/util/](https://github.com/codekrnl/bandwidth-monitor/tree/master/util) | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
 | [/storage/](https://github.com/codekrnl/bandwidth-monitor/tree/master/storage) | Contains storage management files. |  
-| [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |  
  
 ### Features
 |Feature | Description  |
