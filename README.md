@@ -58,7 +58,7 @@ You can modify the time interval the program gathers internet bandwidth data.
 
 This can be set in the [program's configuration file](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) with the `check-interval` field.
 
-> Default check interval is `1m` --- every 1 minute.
+> Default check interval is `1m` — every 1 minute.
 
 #### Supported Extensions
 
