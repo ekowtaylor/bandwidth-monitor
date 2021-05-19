@@ -60,17 +60,15 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 
 > Default check interval is `1m` --- every 1 minute.
 
-<details>
-    <summary>Supported Extensions</summary>
+#### Supported Extensions
 
-    | Extension | Description | Example | 
-    |:---------:|:-----------:|:-------:| 
-    |     s     |   Seconds   |    2s   | 
-    |     m     |   Minutes   |    3m   | 
-    |     h     |    Hours    |   19h   | 
-    |     d     |     Days    |    5d   | 
-    |     w     |    Weeks    |    3w   |   
-</details>
+| Extension | Description | Example | 
+|:---------:|:-----------:|:-------:| 
+|     s     |   Seconds   |    2s   | 
+|     m     |   Minutes   |    3m   | 
+|     h     |    Hours    |   19h   | 
+|     d     |     Days    |    5d   | 
+|     w     |    Weeks    |    3w   |   
 
  ## TODO  
 * Implement web UI - Implemented on November 7, 2020 🟢  
