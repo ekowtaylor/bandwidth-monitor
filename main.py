@@ -63,7 +63,7 @@ def main() -> None:
     signal.signal(signal.SIGINT, my_signal_handler)
 
     app.started = time_started
-    app.main()
+    app.main(WEB_PORT)
 
 
 def main_loop(interval) -> None:

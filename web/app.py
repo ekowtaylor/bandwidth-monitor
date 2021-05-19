@@ -5,7 +5,7 @@ import os
 from flask import Flask, render_template
 
 from data.data_analyzer import get_data, get_summary
-import main
+from main import WEB_PORT
 
 template_dir = os.path.dirname(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 template_dir = os.path.join(template_dir, 'bandwidth-monitor-master')
@@ -15,6 +15,12 @@ app = Flask(__name__, template_folder=template_dir)
 
 started = None
 
+
+@app.route('/settings')
+def settings():
+    template = render_template('settings.html')
+
+    return template
 
 @app.route('/')
 def index():
@@ -46,11 +52,11 @@ def parse_datetime(f):
     return datetime.datetime.fromtimestamp(f).strftime("%m/%d/%Y, %H:%M:%S")
 
 
-def main():
+def main(web_port):
     print('[INFO]: Starting web server...')
 
     log = logging.getLogger('werkzeug')
     log.setLevel(logging.CRITICAL)
 
     app.env = 'production'
-    app.run(debug=False, port=8600)
+    app.run(debug=False, port=web_port)
