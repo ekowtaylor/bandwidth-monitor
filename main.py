@@ -14,8 +14,8 @@ from util import time as time_util
 from util.time import get_date_time
 from web import app
 
-CONNECTION_TYPE = internet.get_connection_type()
 WEB_PORT = 9000
+VERSION = "1.0-ALPHA"
 
 time_started = None
 
@@ -76,13 +76,15 @@ def main_loop(interval) -> None:
 
 
 if __name__ == '__main__':
+    
     print('---------------------------------------')
     print()
+    print('\tBandwidth Monitor')
+    print()
     print('Author: Eyal Berkovich')
-    print('Description: Small tool for measuring network\'s bandwidth')
-    available = internet.is_internet_available("google.com")
-    print(f'Is Internet Connection Available?: {available}')
-    print(f'Internet Connection Type: {CONNECTION_TYPE}')
+    print('Description: Small tool for measuring network bandwidth')
+    print(f'Program Version: {VERSION}')
+    print(f'Connection Type: {internet.get_connection_type()}')
     print()
     print('---------------------------------------')
 
