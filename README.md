@@ -23,13 +23,21 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 
 | Name | Purpose |  
 |--|--|  
+| [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. | 
 | [/config/](https://github.com/codekrnl/bandwidth-monitor/tree/master/config) | Configuration management files. Currently only json configuration files are supported. |  
 | [/measure/](https://github.com/codekrnl/bandwidth-monitor/tree/master/measure) | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
 | [/util/](https://github.com/codekrnl/bandwidth-monitor/tree/master/util) | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
 | [/storage/](https://github.com/codekrnl/bandwidth-monitor/tree/master/storage) | Contains storage management files. |  
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Main configuration file. |  
-| [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. | 
  
+### Features
+|Feature | Description  |
+|:--|:--|
+| Collect Bandwidth Data | Collect internet bandwidth results from well known services, like [fast.com](https://fast.com/) and [speedtest.net](https://speedtest.net/). |
+| Web UI | You can view your collected data using a nice Web UI, that runs on a local server on your computer. The port can be set [in the web-port field](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json). |
+| CLI | This tool prints your collected information in your terminal |
+
+
 #### Supported databases:    
 |  Database Name  |      Status      |
 |:----------------|:----------------|
@@ -45,8 +53,9 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 
  ## TODO  
 * Implement web UI - Implemented on November 7, 2020 🟢  
-* Implement running process list information 🔴
-* Implement auto web UI refresh 🔴
+* Implement running process list information - 🔴
+* Implement connection type resolver - 🔴
+* Implement auto web UI refresh - 🔴
 
 ## Screenshots    
 ### CLI Tool: 
