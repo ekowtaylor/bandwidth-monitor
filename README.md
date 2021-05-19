@@ -99,9 +99,13 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 
 ## Screenshots    
 ### CLI Tool: 
+> Displays collected data in your terminal. On end, prints basic statistic data about your collected data.
+
 ![CLI Tool](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/cli-monitor.png?raw=true)
 
 ### Main Monitor Dashboard:
+> Displays a graph with your collected data and details about start date, request count, etc.
+
 ![Main dashboard](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/bandwidth-monitor-ui.png?raw=true)
 
 ## Author
