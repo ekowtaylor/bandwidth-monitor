@@ -4,11 +4,31 @@
 My internet connection always seems unstable, dropping here and there. To monitor and catch such phenomenas, I decided to build a network bandwidth monitor that fetches download and upload rate based on a given time interval which can be set in the [config file](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json "config file").     
 
 ## How to Install & Run
-Firstly, please run `pip3 install -r requirements.txt` to make sure you have all the required modules installed.
+Firstly, please run `pip3 install -r requirements.txt` to install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt), to make sure you have all the required modules installed.
 After that, you can run `python3 main.py` to run the entry point in the main file.
 
 Because the web panel is running on your machine, it means it runs on a local web server, on your machine. So, to access the web panel, you can go to you web browser and type `localhost:<YOUR_SET_WEB_PORT>`.
 If you haven't modified the config file, the default web port is 8600, so the address is: `localhost:8600`.
+
+<details>
+
+<summary> Required Modules </summary>
+
+`speedtest-cli
+redis
+psutil
+flask`
+
+</details>
+
+<details>
+
+<summary>Show commands</summary>
+
+`pip3 install -r requirements.txt` — To install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt).
+`python3 main.py` — To run program.
+
+</details>
 
  ## Project Structure 
  ### 
