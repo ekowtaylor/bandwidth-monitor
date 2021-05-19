@@ -31,13 +31,13 @@ After that, you can run `python3 main.py` to run the entry point in the main fil
 | [main.py](https://github.com/codekrnl/bandwidth-monitor/blob/master/main.py) | Program entry point. | 
  
 #### Supported databases:    
- | Database Name |      Status     | 
- |:-------------:|:---------------:| 
- |SQLite    | Implemented 🟢 | 
- |MySQL     | Not Implemented 🔴 | 
- |PostgreSQL     | Not Implemented 🔴 | 
- |Flat File storage     | Not Implemented 🔴 |    
- 
+|  Database Name  |      Status      |
+|:----------------|:----------------|
+|     SQLite      |  Implemented 🟢  |
+|      MySQL      |Not Implemented 🔴|
+|   PostgreSQL    |Not Implemented 🔴|
+|Flat File storage|Not Implemented 🔴|
+
  #### Supported cache systems:    
  | Cache Name |      Status     |
  |:-------------:|:---------------:| 
