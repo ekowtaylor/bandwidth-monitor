@@ -13,10 +13,13 @@ Here's a table of supported time interval extensions:
 |     d     |     Days    |    5d   | 
 |     w     |    Weeks    |    3w   |    
 
+## How to Install & Run
+Firstly, please run `pip3 install -r requirements.txt` to make sure you have all the required modules installed.
+After that, you can run `python3 main.py` to run the entry point in the main file.
+
  ## Project Structure 
  ### 
  Bandwidth Monitor stores and caches results from well-known internet speed test sources like [speedtest.net](https://www.speedtest.net/ "speedtest.net") and [fast.com](http://fast.com "fast.com") automatically, and also offers a slick UI to manage and monitor your collected data.    
-
 
 | Name | Purpose |  
 |--|--|  
@@ -34,17 +37,20 @@ Here's a table of supported time interval extensions:
  |     MySQL     | Not implemented 🔴 | 
  |     PostgreSQL     | Not implemented 🔴 | 
  |     Flat File storage     | Not implemented 🔴 |    
+ 
  #### Supported cache systems:    
  | Cache Name |      Status     |
  |:-------------:|:---------------:| 
  |     Redis    | Not implemented |    
+
  ## TODO  
 * Implement Web UI - Implemented on November 7, 2020 🟢  
 * Auto Refresh 🔴
 
-# Screenshots    
+## Screenshots    
 ### CLI Tool: 
 ![CLI Tool](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/cli-monitor.png?raw=true)
+
 ### Main Monitor Dashboard:
 ![Main dashboard](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/bandwidth-monitor-ui.png?raw=true)
 
