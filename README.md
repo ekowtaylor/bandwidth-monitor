@@ -2,16 +2,6 @@
 # Bandwidth Monitor    
 ## Description
 My internet connection always seems unstable, dropping here and there. To monitor and catch such phenomenas, I decided to build a network bandwidth monitor that fetches download and upload rate based on a given time interval which can be set in the [config file](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json "config file").     
-    
-Here's a table of supported time interval extensions:    
-    
-| Extension | Description | Example | 
-|:---------:|:-----------:|:-------:| 
-|     s     |   Seconds   |    2s   | 
-|     m     |   Minutes   |    3m   | 
-|     h     |    Hours    |   19h   | 
-|     d     |     Days    |    5d   | 
-|     w     |    Weeks    |    3w   |    
 
 ## How to Install & Run
 Firstly, please run `pip3 install -r requirements.txt` to make sure you have all the required modules installed.
@@ -54,6 +44,33 @@ If you haven't modified the config file, the default web port is 8600, so the ad
  | Cache Name |      Status     |
  |:-------------:|:---------------:| 
  |     Redis    | Not Implemented 🔴 |    
+
+## Configuration
+
+| Field | Purpose | 
+|:--|:--|
+| `check-interval` | The check time interval to collect data. |
+| `web-port` 	   | The web panel port |
+|`database-name`   | Storage database file name |
+
+### Configurable Time Interval Extensions
+You can modify the time interval the program gathers internet bandwidth data.
+
+This can be set in the [program's configuration file](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) with the `check-interval` field.
+
+> Default check interval is `1m` --- every 1 minute.
+
+<details>
+    <summary>Supported Extensions</summary>
+
+    | Extension | Description | Example | 
+    |:---------:|:-----------:|:-------:| 
+    |     s     |   Seconds   |    2s   | 
+    |     m     |   Minutes   |    3m   | 
+    |     h     |    Hours    |   19h   | 
+    |     d     |     Days    |    5d   | 
+    |     w     |    Weeks    |    3w   |   
+</details>
 
  ## TODO  
 * Implement web UI - Implemented on November 7, 2020 🟢  
