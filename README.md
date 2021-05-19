@@ -14,12 +14,10 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 
 <summary> Required Modules </summary>
 
-`
 - speedtest-cli
 - redis
 - psutil
 - flask
-`
 
 </details>
 
