@@ -14,10 +14,10 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 
 <summary> Required Modules </summary>
 
-`speedtest-cli
-redis
-psutil
-flask`
+- speedtest-cli
+- redis
+- psutil
+- flask
 
 </details>
 
@@ -25,8 +25,9 @@ flask`
 
 <summary>Show commands</summary>
 
-`pip3 install -r requirements.txt` — To install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt).
-`python3 main.py` — To run program.
+- `pip3 install -r requirements.txt` — To install all required modules from [requirements.txt](https://github.com/codekrnl/bandwidth-monitor/blob/master/requirements.txt).
+
+- `python3 main.py` — To run program.
 
 </details>
 
