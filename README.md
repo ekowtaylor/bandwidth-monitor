@@ -14,6 +14,8 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 
 <summary>Required Modules</summary>
 
+> Use `pip3 install -r requirements.txt` to easily install these modules.
+
 - speedtest-cli
 - redis
 - psutil
