@@ -30,13 +30,14 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 | [config.json](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json) | Program configuration file. |  
 | [/config/](https://github.com/codekrnl/bandwidth-monitor/tree/master/config) | Configuration management files. Currently only json configuration files are supported. |  
 | [/measure/](https://github.com/codekrnl/bandwidth-monitor/tree/master/measure) | Responsible for the actual bandwidth measure. Currently, this version only supports [speedtest.net](https://www.speedtest.net/). |  
-| [/util/](https://github.com/codekrnl/bandwidth-monitor/tree/master/util) | Contains utility functions e.g: checking for available internet connection, parsing time intervals read from config. |  
+| [/util/](https://github.com/codekrnl/bandwidth-monitor/tree/master/util) | Contains utility files and functions, e.g: checking for connection availability, parsing time intervals read from config. |  
 | [/storage/](https://github.com/codekrnl/bandwidth-monitor/tree/master/storage) | Contains storage management files. |  
  
 ### Features
 |Feature | Description  |
 |:--|:--|
 | Collect Bandwidth Data | Collect internet bandwidth results from well known services, like [fast.com](https://fast.com/) and [speedtest.net](https://speedtest.net/). |
+| Storage | Store all your collected data in a database, implemented storage types can be seen down belown. |
 | Web Panel | You can view your collected data using a nice Web UI, that runs on a local server on your computer. The port can be set [in the web-port field](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json). |
 | CLI | This tool prints your collected information in your terminal |
 
@@ -52,7 +53,7 @@ If you haven't modified the config file, the default web port is 8600, so the ad
  #### Supported cache systems:    
  | Cache Name |      Status     |
  |:-------------:|:---------------:| 
- |     Redis    | Not implemented |    
+ |     Redis    | Not Implemented 🔴 |    
 
  ## TODO  
 * Implement web UI - Implemented on November 7, 2020 🟢  
