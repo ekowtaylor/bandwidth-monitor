@@ -1,22 +1,20 @@
 # Represents the measure results
 class MeasureResult:
-    def __init__(self, connection_available: bool, connection_type: str, ping_rate, download_rate,
-                 upload_rate, month, day, year, hour, minutes, seconds, timestamp, source: str):
-        self.connection_available = connection_available
-        self.connection_type = connection_type
-        self.ping_rate = ping_rate
-        self.download_rate = download_rate
-        self.upload_rate = upload_rate
-        self.month = month
-        self.day = day
-        self.year = year
-        self.hour = hour
-        self.minutes = minutes
-        self.seconds = seconds
-        self.timestamp = timestamp
+    def __init__(self, source: str):
         self.source = source
 
-        self.parse_rates()
+        self.connection_available = -1
+        self.connection_type = "None"
+        self.ping_rate: int = -1.0
+        self.download_rate: float = 0.0
+        self.upload_rate: float = 0.0
+        self.month = 0
+        self.day = 0
+        self.year = 0
+        self.hour = 0
+        self.minutes = 0
+        self.seconds = 0
+        self.timestamp = 0
 
     def parse_rates(self):
         if self.source == 'speedtest.net':
@@ -26,11 +24,14 @@ class MeasureResult:
             self.download_rate = self.download_rate
             self.upload_rate = self.upload_rate
 
+
     def get_date(self):
         return f'{self.hour}:{self.minutes}:{self.seconds}'
 
+
     def get_time(self) -> str:
         return f'{self.hour}:{self.minutes}:{self.seconds}'
+
 
     def print(self):
         print()

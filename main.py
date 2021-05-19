@@ -7,7 +7,7 @@ import psutil
 
 from config import config_manager
 from data import data_analyzer
-from measure.measures import measure
+from measure.measure_manager import measure
 from storage import storage_manager
 from util import internet
 from util import time as time_util
