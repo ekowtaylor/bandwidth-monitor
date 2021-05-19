@@ -37,7 +37,7 @@ If you haven't modified the config file, the default web port is 8600, so the ad
 |Feature | Description  |
 |:--|:--|
 | Collect Bandwidth Data | Collect internet bandwidth results from well known services, like [fast.com](https://fast.com/) and [speedtest.net](https://speedtest.net/). |
-| Storage | Store all your collected data in a database, implemented storage types can be seen down belown. |
+| Storage | Store all your collected data in a database, implemented storage types can be seen down below. |
 | Web Panel | You can view your collected data using a nice Web UI, that runs on a local server on your computer. The port can be set [in the web-port field](https://github.com/codekrnl/bandwidth-monitor/blob/master/config.json). |
 | CLI | This tool prints your collected information in your terminal |
 
