@@ -6,7 +6,7 @@ from util import internet
 from util import time
 
 # TODO: Implement fast.com measure result
-def get_fastcom_result() -> MeasureResult:
+def get_fastcom_measure() -> MeasureResult:
     source = 'fast.com'
 
     month, day, year, hours, minutes, seconds, milliseconds = time.get_date_time()
@@ -23,7 +23,7 @@ def get_fastcom_result() -> MeasureResult:
     return result
 
 
-def get_speedtest_result() -> MeasureResult:
+def get_speedtest_measure() -> MeasureResult:
     connection_type = "None"
     connection_available = internet.is_internet_available("google.com")
     source = 'speedtest.net'
@@ -54,9 +54,9 @@ def get_speedtest_result() -> MeasureResult:
 
 
 def measure():
-    # Get measure results from speedtest.net
-    speedtest_measure_result: MeasureResult = get_speedtest_result()
-    fastcom_measure_result: MeasureResult = get_fastcom_result()
+    # Get measure results from speedtest.net and fast.com
+    speedtest_measure_result: MeasureResult = get_speedtest_measure()
+    fastcom_measure_result: MeasureResult = get_fastcom_measure()
 
     # Store measure results
     storage_manager.store_measure_result(speedtest_measure_result)
