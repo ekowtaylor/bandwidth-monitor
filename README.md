@@ -113,4 +113,4 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Author
-* Eyal Berkovich
+* *Main Author* - Eyal Berkovich
