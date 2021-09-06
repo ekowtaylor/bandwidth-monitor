@@ -93,12 +93,6 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |     d     |     Days    |    5d   | 
 |     w     |    Weeks    |    3w   |   
 
- ## TODO  
-* Implement web UI - Implemented on November 7, 2020 🟢  
-* Implement running process list information - 🔴
-* Implement connection type resolver - 🔴
-* Implement auto web UI refresh - 🔴
-
 ## Screenshots    
 ### CLI Tool: 
 > Displays collected data in your terminal. On end, prints basic statistic data about your collected data.
@@ -109,6 +103,14 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 > Displays a graph with your collected data and details about start date, request count, etc.
 
 ![Main dashboard](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/bandwidth-monitor-ui.png?raw=true)
+
+ ## TODO  
+| Feature | Status| Impl. Date |
+|:----------|:-----------:|:---|
+|   Web UI  |   🟢   | November 7, 2020 |
+|   Display process list information |   🔴   | N/A |
+|     Connection Type resolver     |    🔴   | N/A |
+|     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Author
 * Eyal Berkovich
