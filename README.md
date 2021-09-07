@@ -112,5 +112,5 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |     ![Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension)     |    🔴   | N/A |
 |     Auto Web UI Refresh |  🔴  | N/A |
 
-## Author
-* *Main Author* - Eyal Berkovich
+## Authors
+* *Main Author* - ![Eyal Berkovich](https://github.com/codekrnl)
