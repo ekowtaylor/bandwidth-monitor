@@ -64,9 +64,9 @@ Because the web panel is running on your machine, it means it runs on a local we
 |Flat File storage| 🔴 |
 
  #### Supported cache systems:    
- | Cache Name |      Status     |
+ | Cache Name |     Impl. Status     |
  |:-------------:|:---------------:| 
- |     Redis    | Not Implemented 🔴 |    
+ |     Redis    | 🔴 |    
 
 ## Configuration
 
