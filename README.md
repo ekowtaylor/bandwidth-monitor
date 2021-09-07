@@ -57,7 +57,7 @@ Because the web panel is running on your machine, it means it runs on a local we
 
 #### Supported databases:    
 |  Database Name  |      Impl. Status      |
-|:----------------|:----------------|
+|:----------------|:----------------:|
 |     SQLite      | 🟢 |
 |      MySQL      | 🔴 |
 |   PostgreSQL    | 🔴 |
