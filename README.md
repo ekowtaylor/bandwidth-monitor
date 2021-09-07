@@ -56,12 +56,12 @@ Because the web panel is running on your machine, it means it runs on a local we
 
 
 #### Supported databases:    
-|  Database Name  |      Status      |
+|  Database Name  |      Impl. Status      |
 |:----------------|:----------------|
-|     SQLite      |  Implemented 🟢  |
-|      MySQL      |Not Implemented 🔴|
-|   PostgreSQL    |Not Implemented 🔴|
-|Flat File storage|Not Implemented 🔴|
+|     SQLite      | 🟢 |
+|      MySQL      | 🔴 |
+|   PostgreSQL    | 🔴 |
+|Flat File storage| 🔴 |
 
  #### Supported cache systems:    
  | Cache Name |      Status     |
@@ -87,11 +87,11 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 
 | Extension | Description | Example | 
 |:---------:|:-----------:|:-------:| 
-|     s     |   Seconds   |    2s   | 
-|     m     |   Minutes   |    3m   | 
-|     h     |    Hours    |   19h   | 
-|     d     |     Days    |    5d   | 
-|     w     |    Weeks    |    3w   |   
+|     s     |   Seconds   |    `2s`   | 
+|     m     |   Minutes   |    `3m`   | 
+|     h     |    Hours    |   `19h`   | 
+|     d     |     Days    |    `5d`   | 
+|     w     |    Weeks    |    `3w`   |   
 
 ## Screenshots    
 ### CLI Tool: 
@@ -109,7 +109,7 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |:----------|:-----------:|:---|
 |   Web UI  |   🟢   | November 7, 2020 |
 |   Display process list information |   🔴   | N/A |
-|     Connection Type resolver     |    🔴   | N/A |
+|     ![Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension)     |    🔴   | N/A |
 |     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Author
