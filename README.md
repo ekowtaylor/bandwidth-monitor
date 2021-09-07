@@ -109,8 +109,8 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |:----------|:-----------:|:---|
 |   Web UI  |   🟢   | November 7, 2020 |
 |   Display process list information |   🔴   | N/A |
-|     ![Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension)     |    🔴   | N/A |
+|     [Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension)     |    🔴   | N/A |
 |     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Authors
-* *Main Author* - ![Eyal Berkovich](https://github.com/codekrnl "GitHub Profile")
+* *Main Author* - [Eyal Berkovich](https://github.com/codekrnl "GitHub Profile")
