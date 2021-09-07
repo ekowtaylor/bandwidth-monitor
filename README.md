@@ -83,7 +83,7 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 
 > Default check interval is `1m` — every 1 minute.
 
-#### Supported Extensions
+#### Supported extensions:
 
 | Extension | Description | Example | 
 |:---------:|:-----------:|:-------:| 
@@ -108,9 +108,9 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 | Feature | Impl. Status | Impl. Date |
 |:----------|:-----------:|:---|
 |   Web UI  |   🟢   | November 7, 2020 |
+|     [Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension "c-binding extension")     |    🔴   | N/A |
 |   Display process list information |   🔴   | N/A |
-|     [Connection Type resolver](https://github.com/codekrnl/NetworkResolverExtension)     |    🔴   | N/A |
 |     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Authors
-* *Main Author* - [Eyal Berkovich](https://github.com/codekrnl "GitHub Profile")
+* *Main Author* - [Eyal Berkovich](https://github.com/codekrnl "Eyal's GitHub Profile")
