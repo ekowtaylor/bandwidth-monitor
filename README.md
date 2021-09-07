@@ -105,7 +105,7 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 ![Main dashboard](https://github.com/codekrnl/bandwidth-monitor/blob/master/screenshots/bandwidth-monitor-ui.png?raw=true)
 
  ## TODO  
-| Feature | Status| Impl. Date |
+| Feature | Impl. Status | Impl. Date |
 |:----------|:-----------:|:---|
 |   Web UI  |   🟢   | November 7, 2020 |
 |   Display process list information |   🔴   | N/A |
@@ -113,4 +113,4 @@ This can be set in the [program's configuration file](https://github.com/codekrn
 |     Auto Web UI Refresh |  🔴  | N/A |
 
 ## Authors
-* *Main Author* - ![Eyal Berkovich](https://github.com/codekrnl)
+* *Main Author* - ![Eyal Berkovich](https://github.com/codekrnl "GitHub Profile")
